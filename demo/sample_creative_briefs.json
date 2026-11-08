@@ -1,0 +1,150 @@
+{
+  "summary": "Double down on creative targeting socks lost in the laundry, as it drives 46% of purchases with an outstanding 1.31 conversion index. Test family-focused angles around kids' laundry and matching struggles while fixing the sorting quiz drop-off. Immediately cut all spend on durability messaging, which severely underperforms at a 0.25 index.",
+  "briefs": [
+    {
+      "pain": "lost_in_laundry",
+      "verdict": "lead",
+      "why": "This angle accounts for 35% of quiz answers and 46% of buyers, delivering our highest conversion index at 1.31 with a strong 66% email completion rate.",
+      "hooks": [
+        "Where do single socks actually go in the dryer?",
+        "I was convinced my washer was eating my socks.",
+        "Your washer is not eating your socks anymore."
+      ],
+      "script": [
+        {
+          "seconds": "0-2",
+          "visual": "A person holds up a single sad sock next to an open dryer.",
+          "voice_or_text": "Where do single socks actually go in the dryer?"
+        },
+        {
+          "seconds": "2-6",
+          "visual": "Hands click two SockLock cuffs together with a distinct snap sound.",
+          "voice_or_text": "SockLock cuffs snap together with a small magnet built right inside."
+        },
+        {
+          "seconds": "6-10",
+          "visual": "Tossing the paired socks into the wash, then pulling them out of the dryer still joined.",
+          "voice_or_text": "They stay together through the wash cycle and dryer tumble."
+        },
+        {
+          "seconds": "10-12",
+          "visual": "Folding the still-connected pair and placing it neatly in a basket.",
+          "voice_or_text": "Both socks come out attached every time you do laundry."
+        },
+        {
+          "seconds": "12-15",
+          "visual": "The 5-pack laid out with on-screen subscription pricing details.",
+          "voice_or_text": "Try 5 pairs for $29, delivered quarterly. Cancel anytime."
+        }
+      ],
+      "on_screen_text": "5 pairs for $29 quarterly | Cancel anytime"
+    },
+    {
+      "pain": "kids_lose",
+      "verdict": "test",
+      "why": "Generates 16% of buyers with an above-average 1.05 index and a solid 66% email pass rate, proving it is a viable secondary creative angle.",
+      "hooks": [
+        "Why does kids' laundry always leave single socks behind?",
+        "I spend half my weekend hunting down kids' socks.",
+        "Kids' socks do not have to separate in laundry."
+      ],
+      "script": [
+        {
+          "seconds": "0-2",
+          "visual": "A parent sighs holding a pile of kids' socks with no mates.",
+          "voice_or_text": "Why does kids' laundry always leave single socks behind?"
+        },
+        {
+          "seconds": "2-6",
+          "visual": "Close-up of clicking two small socks together at the cuff magnets.",
+          "voice_or_text": "Click the cuffs together before tossing them in the hamper."
+        },
+        {
+          "seconds": "6-10",
+          "visual": "The washer drum spinning, followed by pulling the intact pair out.",
+          "voice_or_text": "The built-in magnet keeps each pair connected in the washer and dryer."
+        },
+        {
+          "seconds": "10-15",
+          "visual": "Parent drops connected socks straight into a basket, smiling, showing offer card.",
+          "voice_or_text": "Laundry day made simple. Get 5 pairs for $29 every quarter. Cancel anytime."
+        }
+      ],
+      "on_screen_text": "Keep pairs together in wash | 5 pairs for $29"
+    },
+    {
+      "pain": "mismatched",
+      "verdict": "test",
+      "why": "Represents 24% of buyers and answers with a balanced 0.99 conversion index and 62% email pass rate, making it a reliable baseline performer.",
+      "hooks": [
+        "Can you ever find a matching pair of socks?",
+        "I gave up and started wearing mismatched socks.",
+        "Finding matching socks after laundry just got simple."
+      ],
+      "script": [
+        {
+          "seconds": "0-2",
+          "visual": "Actor rummaging through a clean laundry basket pulling out mismatched socks.",
+          "voice_or_text": "Can you ever find a matching pair of socks?"
+        },
+        {
+          "seconds": "2-6",
+          "visual": "Actor snaps SockLock cuffs together with an audible click.",
+          "voice_or_text": "SockLock has tiny magnets hidden in each cuff."
+        },
+        {
+          "seconds": "6-10",
+          "visual": "Actor unloads the dryer, pulling out perfectly matched pairs stuck together.",
+          "voice_or_text": "They stay attached in the washer and dryer so pairs match right away."
+        },
+        {
+          "seconds": "10-15",
+          "visual": "Actor stacks matched socks quickly, end card shows offer details.",
+          "voice_or_text": "Grab 5 pairs for $29, delivered every quarter. Cancel anytime."
+        }
+      ],
+      "on_screen_text": "5 pairs for $29 | Fresh delivery every quarter"
+    },
+    {
+      "pain": "sorting_time",
+      "verdict": "test",
+      "why": "The index is 0.75 due to a weak 52% email pass rate, meaning the leak is in the quiz, not the angle, since magnetic cuffs directly eliminate laundry sorting.",
+      "hooks": [
+        "Does sorting sock piles take up your whole evening?",
+        "I hate spending Sunday afternoon matching clean socks.",
+        "Stop wasting your weekend sorting socks after laundry."
+      ],
+      "script": [
+        {
+          "seconds": "0-2",
+          "visual": "Overhead view of a messy pile of unsorted socks on a bed.",
+          "voice_or_text": "Does sorting sock piles take up your whole evening?"
+        },
+        {
+          "seconds": "2-6",
+          "visual": "Two SockLock socks snap together at the cuffs before entering the wash.",
+          "voice_or_text": "SockLock pairs connect magnetically before they go into the machine."
+        },
+        {
+          "seconds": "6-10",
+          "visual": "Taking connected pairs out of the dryer and putting them right away.",
+          "voice_or_text": "They wash and dry together, so you skip sorting completely out of the dryer."
+        },
+        {
+          "seconds": "10-15",
+          "visual": "Actor smiling beside clean basket, holding up the 5-pack box.",
+          "voice_or_text": "Save time on laundry. Get 5 pairs for $29 every quarter. Cancel anytime."
+        }
+      ],
+      "on_screen_text": "Skip the sorting pile | 5 pairs for $29"
+    },
+    {
+      "pain": "wear_out",
+      "verdict": "avoid",
+      "why": "This angle produces an abysmal 0.25 conversion index and represents just 3% of buyers despite 10% of quiz traffic. Cut all ad spend on wear and tear, and do not make durability, fabric quality, or longevity claims in ads.",
+      "hooks": [],
+      "script": [],
+      "on_screen_text": ""
+    }
+  ]
+}

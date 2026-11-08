@@ -1,0 +1,442 @@
+[
+  {
+    "segment_id": "lost_in_laundry__offer",
+    "pain": "lost_in_laundry",
+    "drop_stage": "offer",
+    "leads": 2135,
+    "angle": "Overcome the frustration of lost laundry socks by demonstrating how magnetic cuffs keep pairs attached, backed by an easy, cancel-anytime subscription.",
+    "emails": [
+      {
+        "send_after_hours": 1,
+        "subject": "Stop socks from disappearing in the wash",
+        "alt_subjects": [
+          "The laundry hamper doesn't have to eat socks",
+          "Keep your sock pairs together in the dryer"
+        ],
+        "preheader": "A small magnet in the cuff keeps your pairs together in the wash.",
+        "body": "In your quiz, you mentioned that socks disappear in your laundry. It happens all the time: two socks go into the washer, and only one comes out.\n\nSockLock ends that cycle. Each pair features a small magnet in the cuffs that locks them together in the washer and dryer.\n\nYou can start with 5 pairs in size {{ size }} for $29, followed by a fresh delivery every quarter. You can cancel anytime.",
+        "cta_text": "Get Your 5 Pairs for $29"
+      },
+      {
+        "send_after_hours": 24,
+        "subject": "Unsure about the SockLock subscription?",
+        "alt_subjects": [
+          "What happens after your first 5 pairs?",
+          "Cancel your quarterly sock order anytime"
+        ],
+        "preheader": "No hidden catches. Get 5 pairs for $29 and cancel anytime you want.",
+        "body": "We noticed you checked out the quiz but didn't finish ordering your size {{ size }} pairs.\n\nIf a recurring delivery makes you hesitate, we keep it simple. You start with 5 pairs for $29. A small magnet in the cuff keeps each pair together in the wash, so you stop losing socks to the dryer.\n\nAfter that, you get a fresh delivery every quarter. There is no long-term commitment, and you can cancel anytime with no hassle.",
+        "cta_text": "Try 5 Pairs for $29"
+      },
+      {
+        "send_after_hours": 72,
+        "subject": "Still losing socks in the laundry?",
+        "alt_subjects": [
+          "One small magnet changes laundry day",
+          "Never search for a missing sock again"
+        ],
+        "preheader": "Put an end to missing socks with magnetic cuffs that stay together.",
+        "body": "This is our last note about your quiz results.\n\nIf you are tired of watching socks disappear in the laundry, SockLock was built specifically to solve that problem. A small magnet in the cuffs keeps each pair attached through both the washer and dryer.\n\nYou can grab your 5 pairs in size {{ size }} for $29, with new pairs arriving every quarter. If you ever change your mind, you can cancel anytime.",
+        "cta_text": "Complete Your Order"
+      }
+    ],
+    "repairs": 0,
+    "qa_score": 95
+  },
+  {
+    "segment_id": "mismatched__offer",
+    "pain": "mismatched",
+    "drop_stage": "offer",
+    "leads": 1408,
+    "angle": "End the daily frustration of missing socks with magnetic pairs that stay united in the laundry, backed by a simple subscription you can cancel anytime.",
+    "emails": [
+      {
+        "send_after_hours": 1,
+        "subject": "Still searching for matching socks?",
+        "alt_subjects": [
+          "The simple fix for missing socks",
+          "Keep your sock pairs together forever"
+        ],
+        "preheader": "A small magnet in the cuff keeps your pairs together in the wash.",
+        "body": "You mentioned in our quiz that you can never find a matching pair of socks. We know how annoying that daily search is.\n\nSockLock stops it before it starts. Each pair has a small magnet built into the cuffs. Snap them together before they go into the hamper, and they stay attached through the washer and dryer.\n\nGrab your 5 pairs in size {{ size }} for $29, with a fresh delivery every quarter. You can cancel anytime.",
+        "cta_text": "Get Your 5 Pairs for $29"
+      },
+      {
+        "send_after_hours": 24,
+        "subject": "How SockLock works in the wash",
+        "alt_subjects": [
+          "What happens to magnets in the dryer?",
+          "Never lose a sock in the dryer again"
+        ],
+        "preheader": "Small magnets keep them together. Cancel your plan anytime.",
+        "body": "Wondering how SockLock actually keeps you from losing socks?\n\nIt is simple: each sock has a small magnet embedded in the cuff. When you snap a pair together, they stay linked through both the wash and dry cycles. No separated pairs, no unmatched singles left in the drawer.\n\nYou also might wonder about the quarterly plan. You get 5 pairs in size {{ size }} today for $29, followed by a new delivery every quarter. There is zero commitment, and you can cancel anytime.",
+        "cta_text": "Start Your SockLock Subscription"
+      },
+      {
+        "send_after_hours": 72,
+        "subject": "Still missing matching socks?",
+        "alt_subjects": [
+          "The end of the single sock drawer",
+          "Stop wasting time sorting your socks"
+        ],
+        "preheader": "A small magnet keeps pairs together through the washer and dryer.",
+        "body": "We will keep this brief. If you are tired of searching for matching socks every morning, SockLock is ready.\n\nSockLock does one specific job: the small magnet in each cuff keeps your pairs united in the washer and dryer so you never lose one. It will not fix every problem in your laundry room, but it will ensure you always pull out complete pairs.\n\nTry 5 pairs in size {{ size }} for $29. A new shipment arrives every quarter, and you can cancel anytime.",
+        "cta_text": "Get Your 5 Pairs"
+      }
+    ],
+    "repairs": 0,
+    "qa_score": 95
+  },
+  {
+    "segment_id": "kids_lose__offer",
+    "pain": "kids_lose",
+    "drop_stage": "offer",
+    "leads": 918,
+    "angle": "Take control of laundry day by ensuring your own socks never get separated in the wash, even if your kids still lose theirs.",
+    "emails": [
+      {
+        "send_after_hours": 1,
+        "subject": "Tired of missing socks in the wash?",
+        "alt_subjects": [
+          "The laundry basket mystery solved",
+          "Keep your sock pairs together in the dryer"
+        ],
+        "preheader": "A small magnet in the cuff keeps your pairs together through the washer and dryer.",
+        "body": "You mentioned in the quiz that your kids lose socks constantly. When laundry day turns into a scavenger hunt, the last thing you need is your own socks vanishing into thin air too.\n\nSockLock uses a small magnet built into the cuffs to lock each pair together before they hit the washer and dryer. They go in together, and they come out together.\n\nStart with 5 pairs in size {{ size }} for $29. A fresh batch arrives every quarter, and you can cancel anytime.\n\nReady to cross your socks off the lost-and-found list?",
+        "cta_text": "Get Your 5 Pairs for $29"
+      },
+      {
+        "send_after_hours": 24,
+        "subject": "Can magnets really fix the lost sock problem?",
+        "alt_subjects": [
+          "What SockLock can and cannot do",
+          "Never match another pair of socks"
+        ],
+        "preheader": "An honest look at how SockLock helps your laundry routine.",
+        "body": "To be clear: SockLock cannot stop your kids from kicking their socks under the couch or leaving them across the house. Magnets cannot change kid habits.\n\nWhat SockLock does solve is the laundry pileup. The small magnet in each cuff keeps your pairs locked together in both the washer and dryer. That means you will never waste time sorting, matching, or tracking down missing singles for your own drawers.\n\nYou can test it out with 5 pairs in size {{ size }} for $29. If it is not for you, cancel anytime before your next quarterly delivery.",
+        "cta_text": "Try SockLock for $29"
+      },
+      {
+        "send_after_hours": 72,
+        "subject": "One less thing to match on laundry day",
+        "alt_subjects": [
+          "The end of orphan socks in your drawer",
+          "Keep your socks paired through every wash"
+        ],
+        "preheader": "Five pairs for $29 with a fresh delivery every quarter. Cancel anytime.",
+        "body": "This is our final note about your quiz results.\n\nWhen kids constantly lose socks, laundry day is already chaotic enough. You shouldn't have to spend your evenings digging through baskets just to find a matching pair for yourself.\n\nWith SockLock, the small cuff magnet keeps each pair connected through the entire wash and dry cycle. They stay paired from the hamper back to your drawer.\n\nGet 5 pairs in size {{ size }} for $29, followed by a new delivery every quarter. There is zero long-term commitment, and you can cancel anytime.",
+        "cta_text": "Order Your 5 Pairs"
+      }
+    ],
+    "repairs": 0,
+    "qa_score": 95
+  },
+  {
+    "segment_id": "sorting_time__offer",
+    "pain": "sorting_time",
+    "drop_stage": "offer",
+    "leads": 762,
+    "angle": "Reclaiming the hours lost to matching laundry by keeping socks magnetically connected through the entire wash and dry cycle.",
+    "emails": [
+      {
+        "send_after_hours": 1,
+        "subject": "Still sorting socks by hand?",
+        "alt_subjects": [
+          "The end of your laundry pile mystery",
+          "Stop wasting time sorting your socks"
+        ],
+        "preheader": "A simple magnet in each cuff keeps your pairs together forever.",
+        "body": "You mentioned in the quiz that sorting and pairing takes forever. When you spend your weekend matching up dark socks, laundry feels like a chore that never ends. SockLock solves that with a small magnet built into the cuffs. Snap your size {{ size }} socks together before they go into the hamper, and they stay together through the washer and dryer. No more searching for missing mates or sorting piles. You can get 5 pairs for $29, delivered every quarter so your drawer stays stocked. You can cancel anytime. Ready to get your time back?",
+        "cta_text": "Get 5 pairs for $29"
+      },
+      {
+        "send_after_hours": 24,
+        "subject": "Wondering how magnetic socks wash?",
+        "alt_subjects": [
+          "What happens to magnets in the dryer?",
+          "Wash and dry without losing a pair"
+        ],
+        "preheader": "Here is how SockLock keeps your laundry routine completely effortless.",
+        "body": "If you are still spending time pairing socks, you might be wondering how SockLock works in the wash. Each cuff holds a small magnet that clicks together before laundry day. They stay locked through the wash cycle and tumble dry together without separating. That means when the dryer buzzes, your size {{ size }} socks are already paired up and ready for your drawer. You also do not need to worry about being locked into anything. The subscription is 5 pairs for $29 every quarter, and you can cancel anytime.",
+        "cta_text": "Try SockLock for $29"
+      },
+      {
+        "send_after_hours": 72,
+        "subject": "One last note about your laundry pile",
+        "alt_subjects": [
+          "Is sorting socks really worth the time?",
+          "Spend zero minutes pairing socks"
+        ],
+        "preheader": "Skip the sock matching on your next laundry day.",
+        "body": "We know sorting and pairing takes forever, but change takes a decision. SockLock does just one job: the small magnet in each cuff keeps your socks together in the washer and dryer. It will not fold your shirts or clean your house, but it will make sure you never have to match up a single pair of size {{ size }} socks again. For $29, you get 5 pairs sent right to your door every quarter, and you can cancel anytime with no hassle. If you are ready to stop pairing socks, we are here.",
+        "cta_text": "Order your 5 pairs now"
+      }
+    ],
+    "repairs": 0,
+    "qa_score": 100
+  },
+  {
+    "segment_id": "wear_out__offer",
+    "pain": "wear_out",
+    "drop_stage": "offer",
+    "leads": 625,
+    "angle": "Be honest that magnets prevent laundry loss rather than fabric wear, while highlighting how quarterly deliveries keep worn-out socks continually replaced.",
+    "emails": [
+      {
+        "send_after_hours": 1,
+        "subject": "Still thinking about size {{ size }}?",
+        "alt_subjects": [
+          "The real reason sock drawers fail",
+          "Never lose another sock in the wash"
+        ],
+        "preheader": "Get 5 pairs for $29, with fresh deliveries every quarter.",
+        "body": "You took our quiz and mentioned your socks wear out too fast.\n\nWhile our small cuff magnets will not stop everyday wear and tear, SockLock solves the other half of the problem: losing socks in the washer and dryer. The built-in magnets keep each pair locked together through every wash cycle.\n\nPlus, with 5 pairs in size {{ size }} for $29 today and a new delivery every quarter, you will always have fresh pairs ready to wear. You can cancel anytime.\n\nFinish setting up your plan below.",
+        "cta_text": "Get 5 pairs for $29"
+      },
+      {
+        "send_after_hours": 24,
+        "subject": "Can magnetic socks stop wear and tear?",
+        "alt_subjects": [
+          "An honest answer about SockLock",
+          "Keep your pairs together every wash"
+        ],
+        "preheader": "What our magnets actually do, and how quarterly deliveries help.",
+        "body": "When you took our quiz, you told us that your socks wear out too fast.\n\nWe want to be completely honest: our magnets do not prevent socks from wearing out over time. What the small cuff magnets actually do is keep each pair together in the washer and dryer so you never lose one.\n\nTo deal with socks wearing down, our subscription sends you a new delivery every quarter. That starts with 5 pairs in size {{ size }} for $29. You can cancel anytime.",
+        "cta_text": "Claim your 5 pairs"
+      },
+      {
+        "send_after_hours": 72,
+        "subject": "Still dealing with worn-out socks?",
+        "alt_subjects": [
+          "A simpler way to manage your socks",
+          "Get 5 magnetic pairs for $29"
+        ],
+        "preheader": "Your size {{ size }} plan is ready if you want to start.",
+        "body": "This is our last note about your SockLock quiz.\n\nSocks naturally wear out, and single socks vanish in the laundry. SockLock cannot make socks last forever, but the small magnet in each cuff ensures pairs stay together through the washer and dryer.\n\nTo keep worn-out socks out of your drawer, our subscription sends a new delivery every quarter. Start today with 5 pairs in size {{ size }} for $29, and cancel anytime if it is not right for you.",
+        "cta_text": "Start your subscription"
+      }
+    ],
+    "repairs": 0,
+    "qa_score": 100
+  },
+  {
+    "segment_id": "lost_in_laundry__step_5",
+    "pain": "lost_in_laundry",
+    "drop_stage": "step_5",
+    "leads": 366,
+    "angle": "End the frustration of missing laundry socks with cuff magnets that keep pairs united through the washer and dryer.",
+    "emails": [
+      {
+        "send_after_hours": 1,
+        "subject": "Tired of socks vanishing in the wash?",
+        "alt_subjects": [
+          "Where do your missing socks actually go?",
+          "Keep your sock pairs together in the wash"
+        ],
+        "preheader": "See how SockLock stops missing socks before your next wash.",
+        "body": "You told us in the quiz that socks disappear in your laundry. It happens to all of us, but it does not have to.\n\nSockLock socks have a small magnet built into each cuff. Snap them together before they hit the hamper, and they stay together through both the washer and dryer. No more lost singles.\n\nYour size {{ size }} plan is ready: 5 pairs for $29, delivered every quarter so your drawer stays stocked. You can cancel anytime.\n\nReady to solve the missing sock mystery?",
+        "cta_text": "Get Your 5 Pairs"
+      },
+      {
+        "send_after_hours": 24,
+        "subject": "How magnets survive your dryer",
+        "alt_subjects": [
+          "Can a magnet really fix laundry day?",
+          "Never lose another sock in the laundry"
+        ],
+        "preheader": "Here is how our magnetic cuffs keep your pairs together.",
+        "body": "If you are wondering whether magnets can really survive your laundry routine, here is how SockLock works.\n\nEach sock cuff contains a small magnet. When you take them off, just click the pair together. That connection holds tight through the wash cycle and the heat of the dryer. They come out together, ready to put away.\n\nYou can try size {{ size }} with our 5-pair plan for $29. A fresh batch arrives every quarter, and there is zero commitment because you can cancel anytime.\n\nStop digging around for lost socks.",
+        "cta_text": "Try SockLock for $29"
+      },
+      {
+        "send_after_hours": 72,
+        "subject": "Still losing socks in the dryer?",
+        "alt_subjects": [
+          "The easiest laundry fix you have not tried",
+          "Keep every pair of socks together"
+        ],
+        "preheader": "An honest fix for disappearing socks, delivered quarterly.",
+        "body": "SockLock will not do your laundry or fold your clothes, but it does solve one specific headache: socks disappearing in the wash.\n\nA small magnet in each cuff keeps your pairs united from the dirty clothes pile all the way through the dryer. When laundry day is done, you still have complete pairs.\n\nGet 5 pairs in size {{ size }} for $29, followed by a new delivery every quarter. If it is not for you, cancel anytime with no hassle.\n\nTake control of your laundry pile today.",
+        "cta_text": "Lock Your Socks Together"
+      }
+    ],
+    "repairs": 0,
+    "qa_score": 100
+  },
+  {
+    "segment_id": "mismatched__step_5",
+    "pain": "mismatched",
+    "drop_stage": "step_5",
+    "leads": 244,
+    "angle": "Stop the frustration of missing socks by keeping pairs locked together through laundry day with built-in cuff magnets.",
+    "emails": [
+      {
+        "send_after_hours": 1,
+        "subject": "Tired of missing socks?",
+        "alt_subjects": [
+          "Why your socks keep disappearing",
+          "Keep your sock pairs together in the wash"
+        ],
+        "preheader": "Stop losing socks in the laundry with SockLock magnetic socks.",
+        "body": "You told us in the quiz that you can never find a matching pair of socks.\n\nSockLock stops that problem for good. Each pair has a small magnet in the cuffs that snaps them together before they go into the laundry. They stay locked together through both the washer and the dryer, so they come out together every single time.\n\nGet 5 pairs in your size {{ size }} for $29, then a fresh delivery every quarter. You can cancel anytime.",
+        "cta_text": "Get Your 5 Pairs"
+      },
+      {
+        "send_after_hours": 24,
+        "subject": "Do magnetic socks really work?",
+        "alt_subjects": [
+          "The secret inside our sock cuffs",
+          "Never search for a matching sock again"
+        ],
+        "preheader": "Here is how SockLock keeps your pairs together through the wash and dryer.",
+        "body": "If you are wondering how magnetic socks handle wash day, the answer is simple.\n\nEach SockLock sock has a small magnet built right into the cuff. You snap the pair together before tossing them in the hamper. They stay firmly attached through the washing machine and dryer, so no stray sock ever gets left behind.\n\nYou can start with 5 pairs in size {{ size }} for $29. After that, you will receive a new delivery every quarter. There is no long-term commitment because you can cancel anytime.",
+        "cta_text": "Start Your Subscription"
+      },
+      {
+        "send_after_hours": 72,
+        "subject": "Still searching for matching socks?",
+        "alt_subjects": [
+          "A simple fix for your sock drawer",
+          "End missing socks in the wash for $29"
+        ],
+        "preheader": "A simple, honest way to keep your socks paired up forever.",
+        "body": "Digging through the laundry basket hoping to find a match takes up unnecessary time.\n\nSockLock does one job and does it right: the small magnet in each cuff keeps your pairs together from the hamper through the washer and dryer.\n\nWe will not pretend this solves every laundry headache, but you will never lose a sock again. Grab 5 pairs in size {{ size }} for $29, followed by a new delivery every quarter. If you ever change your mind, you can cancel anytime.",
+        "cta_text": "Claim Your 5 Pairs"
+      }
+    ],
+    "repairs": 0,
+    "qa_score": 100
+  },
+  {
+    "segment_id": "kids_lose__step_5",
+    "pain": "kids_lose",
+    "drop_stage": "step_5",
+    "leads": 161,
+    "angle": "Show busy parents dealing with missing socks how magnetic cuffs keep pairs together in the wash and dryer to eliminate laundry sorting stress.",
+    "emails": [
+      {
+        "send_after_hours": 1,
+        "subject": "Tired of lost socks in the laundry?",
+        "alt_subjects": [
+          "The real reason pairs keep vanishing",
+          "Keep every pair together in the wash"
+        ],
+        "preheader": "End the missing sock headache with a simple built-in magnet.",
+        "body": "You mentioned in our quiz that your kids lose socks constantly. When laundry piles up, single socks seem to vanish into thin air between the washer and dryer.\n\nSockLock fixes that exact laundry problem. A small magnet in the cuffs keeps each pair locked together through every wash and dry cycle, so you never have to hunt for a missing match again.\n\nYour size {{ size }} plan is ready. Get 5 pairs for $29, followed by a fresh delivery every quarter. You can cancel anytime.\n\nClick below to finish your quiz and see your plan.",
+        "cta_text": "See Your 5-Pair Plan"
+      },
+      {
+        "send_after_hours": 24,
+        "subject": "How the cuffs stay together",
+        "alt_subjects": [
+          "What happens to magnets in the dryer?",
+          "No more matching singles after laundry"
+        ],
+        "preheader": "Small magnets keep your socks together through every cycle. Cancel anytime.",
+        "body": "If your kids lose socks constantly, sorting laundry becomes a daily chore of matching lonely singles.\n\nYou might be wondering how SockLock actually works. We put a small magnet in the cuff of each sock. Snap them together before they hit the hamper, and they stay attached through both the washer and dryer. You pull them out already paired.\n\nFor size {{ size }}, you get 5 pairs for $29, with a new delivery sent every quarter. There is no long-term commitment because you can cancel anytime.\n\nCheck out your personal offer today.",
+        "cta_text": "Get 5 Pairs for $29"
+      },
+      {
+        "send_after_hours": 72,
+        "subject": "Still dealing with missing socks?",
+        "alt_subjects": [
+          "One less laundry headache each week",
+          "Never sort loose socks again"
+        ],
+        "preheader": "A straightforward fix for socks that go missing in the wash.",
+        "body": "We know the frustration of opening the dryer only to find half of your socks missing. If your kids lose socks constantly, you do not need more singles floating around your house.\n\nSockLock cannot stop socks from being left under the bed, but our magnetic cuffs ensure no pair gets separated in the washer or dryer again.\n\nYou can start with 5 pairs in size {{ size }} for $29, followed by a delivery every quarter. Cancel anytime with no hassle.\n\nIf you want simpler laundry days, your quiz offer is waiting.",
+        "cta_text": "Finish Your Order"
+      }
+    ],
+    "repairs": 0,
+    "qa_score": 100
+  },
+  {
+    "segment_id": "sorting_time__step_5",
+    "pain": "sorting_time",
+    "drop_stage": "step_5",
+    "leads": 116,
+    "angle": "Eliminate the tedious chore of sorting and pairing socks on laundry day by using magnetic cuffs that keep pairs together through the washer and dryer.",
+    "emails": [
+      {
+        "send_after_hours": 1,
+        "subject": "Still sorting socks by hand?",
+        "alt_subjects": [
+          "What happens to your socks in the wash?",
+          "Never sort or pair socks again"
+        ],
+        "preheader": "See how simple laundry gets with pairs that stay together.",
+        "body": "You told us in the quiz that sorting and pairing socks takes forever.\n\nSockLock ends that chore for good. Each pair has a small magnet built into the cuffs, so they snap together before they go into the washer and stay paired all the way through the dryer. You pull them out, and they are already matched.\n\nYour quiz results are ready in size {{ size }}. Get 5 pairs for $29, followed by a new delivery every quarter. You can cancel anytime.\n\nSkip the sorting pile on your next laundry day.",
+        "cta_text": "See Your Offer"
+      },
+      {
+        "send_after_hours": 24,
+        "subject": "How the magnets work in the wash",
+        "alt_subjects": [
+          "What keeps them together in the dryer?",
+          "Wash and dry your socks without losing a pair"
+        ],
+        "preheader": "Here is what happens when you wash socks with magnetic cuffs.",
+        "body": "If you are wondering whether magnets can really handle laundry day, here is how SockLock works.\n\nA small magnet inside each cuff locks the pair together. They stay attached through both the washer and dryer cycles, so neither sock wanders off or gets lost in the drum. When the cycle ends, you pull out a pair that is already sorted.\n\nYou can try SockLock in size {{ size }} with 5 pairs for $29, followed by a delivery every quarter. There is no long-term commitment, and you can cancel anytime.",
+        "cta_text": "Get Your 5 Pairs"
+      },
+      {
+        "send_after_hours": 72,
+        "subject": "One last check on your sock drawer",
+        "alt_subjects": [
+          "Ready to stop matching socks?",
+          "Cut your sock sorting time to zero"
+        ],
+        "preheader": "Take sock pairing off your to-do list for good.",
+        "body": "Laundry day will come around again, and you will have to decide whether to spend time matching loose socks or let magnets do the work for you.\n\nSockLock keeps pairs connected through the washer and dryer using small magnets in the cuffs. It will not fold your clothes, but it does eliminate sorting and lost socks entirely.\n\nStart with 5 pairs in size {{ size }} for $29, then receive a new delivery every quarter. You can cancel anytime.\n\nIf you want to stop pairing socks, your offer is waiting.",
+        "cta_text": "Claim Your Pairs"
+      }
+    ],
+    "repairs": 0,
+    "qa_score": 100
+  },
+  {
+    "segment_id": "wear_out__step_5",
+    "pain": "wear_out",
+    "drop_stage": "step_5",
+    "leads": 109,
+    "angle": "Be upfront that while magnets cannot stop fabric from aging, keeping pairs intact plus regular fresh deliveries means you never have to deal with worn-out pairs again.",
+    "emails": [
+      {
+        "send_after_hours": 1,
+        "subject": "Tired of socks that wear out too fast?",
+        "alt_subjects": [
+          "What happens to your socks in the wash",
+          "Keep your size {{ size }} pairs together"
+        ],
+        "preheader": "Here is the plan for size {{ size }} socks you did not finish seeing.",
+        "body": "You mentioned in our quiz that your biggest sock headache is how fast socks wear out.\n\nYou stepped away right before seeing your plan, so we wanted to share it with you here.\n\nSockLock socks have a small magnet in the cuffs to keep each pair together in the washer and dryer. You never lose a single sock, so you get the full use out of every pair you own.\n\nGet 5 pairs in size {{ size }} for $29, followed by a fresh delivery every quarter so you always have new socks on hand. You can cancel anytime.",
+        "cta_text": "Get Your 5 Pairs for $29"
+      },
+      {
+        "send_after_hours": 24,
+        "subject": "Can magnets fix worn-out socks?",
+        "alt_subjects": [
+          "An honest note about your socks",
+          "Never run low on fresh size {{ size }} socks"
+        ],
+        "preheader": "An honest look at what SockLock can and cannot do for you.",
+        "body": "When you took our quiz, you told us that socks wear out too fast.\n\nWe want to be completely honest with you: a small magnet in the cuff will not make fabric immortal. What it does do is keep your pairs locked together through every wash and dry cycle, so you never throw out half a pair.\n\nOn top of that, our plan delivers fresh pairs every quarter. When your old socks finally reach the end of their run, a new set is already there to replace them.\n\nStart with 5 pairs in size {{ size }} for $29. Cancel anytime.",
+        "cta_text": "Start Your Subscription"
+      },
+      {
+        "send_after_hours": 72,
+        "subject": "Still dealing with socks wearing out?",
+        "alt_subjects": [
+          "One last check on your sock drawer",
+          "Keep your socks paired and refreshed"
+        ],
+        "preheader": "A simple way to keep fresh pairs in your drawer every quarter.",
+        "body": "This is our last note about your quiz answer.\n\nIf you are tired of socks wearing out too fast and leaving you with mismatched singles, SockLock keeps things simple.\n\nA small magnet keeps your socks paired through the washer and dryer so you never lose one. And with a delivery every quarter, you automatically replace pairs before they get threadbare.\n\nYou can try 5 pairs in size {{ size }} for $29. If it is not for you, you can cancel anytime.",
+        "cta_text": "Claim Your 5 Pairs"
+      }
+    ],
+    "repairs": 0,
+    "qa_score": 95
+  }
+]
