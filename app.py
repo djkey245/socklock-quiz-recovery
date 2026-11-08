@@ -76,8 +76,12 @@ with st.sidebar:
         sessions = sessions_from_csv(str(SAMPLE))
 
     st.divider()
-    api_key = st.text_input("Gemini API key", value=os.getenv("GEMINI_API_KEY", ""), type="password",
-                            help="Without a key the Emails tab shows pre-generated demo sequences.")
+    # the key from .env stays on the server: never sent to the browser as a field value
+    env_key = os.getenv("GEMINI_API_KEY", "")
+    typed_key = st.text_input("Gemini API key", type="password",
+                              placeholder="Using key from .env" if env_key else "",
+                              help="Without a key the Emails tab shows pre-generated demo sequences.")
+    api_key = typed_key or env_key
     model = st.text_input("Gemini model", value=os.getenv("GEMINI_MODEL", em.DEFAULT_MODEL))
 
 fun = a.funnel(sessions)
