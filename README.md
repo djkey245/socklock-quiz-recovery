@@ -14,7 +14,7 @@ about 136,000 leads a month that nobody contacts again. This tool takes a quiz e
    B: a generic flow exists) and ranks recovery segments (pain × where the lead stopped).
 4. **Emails** — Gemini writes a 3-email recovery sequence per segment (1 h, 24 h, 72 h) with
    3 subject lines per email for an A/B/C test. Every email is **rule-checked** (limits, merge
-   fields, invented claims, discounts, spam triggers); errors trigger one automatic rewrite.
+   fields, invented claims, absolute promises, discounts, spam triggers); errors trigger one automatic rewrite.
    HTML previews; exports lead profiles and sequences as CSV/JSON for an email platform (e.g. Klaviyo).
 5. **Experiment** — reads the holdout test results and answers "did it make money": incremental
    orders per lead with a 95% interval per segment (Bonferroni-corrected), roll out / keep testing /
@@ -24,9 +24,12 @@ No access to SockLock's Meta, Airtable or backend is needed: input is a CSV, out
 The bundled exports (`data/quiz_events.csv.gz`, `data/experiment_results.csv.gz`) are **synthetic**, calibrated to the data-room funnel
 (88% → 61% → 58% → 36% → 31% → 2% of clicks).
 
-## Run
+## Install and run
+
+Needs Python 3.10+ and git. A Gemini key is optional (free at https://aistudio.google.com/apikey).
 
 ```bash
+git clone https://github.com/djkey245/socklock-quiz-recovery.git
 cd socklock-quiz-recovery
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
@@ -34,8 +37,9 @@ cp .env.example .env        # paste your GEMINI_API_KEY (optional)
 streamlit run app.py        # opens http://localhost:8501
 ```
 
-Without a key the Emails tab shows pre-generated sequences from `demo/sample_sequences.json`;
-the key can also be pasted in the sidebar.
+On Windows activate with `.venv\Scripts\activate`. Without a key the app shows pre-generated
+emails and creative briefs from `demo/`; a key can also be pasted in the sidebar (Gemini section).
+The key from `.env` stays on the server and is never sent to the browser.
 
 Other commands:
 

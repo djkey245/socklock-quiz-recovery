@@ -78,11 +78,13 @@ with st.sidebar:
     st.divider()
     # the key from .env stays on the server: never sent to the browser as a field value
     env_key = os.getenv("GEMINI_API_KEY", "")
-    typed_key = st.text_input("Gemini API key", type="password",
-                              placeholder="Using key from .env" if env_key else "",
-                              help="Without a key the Emails tab shows pre-generated demo sequences.")
+    with st.expander("Gemini", expanded=not env_key):
+        typed_key = st.text_input("API key", type="password",
+                                  placeholder="Using key from .env" if env_key else "",
+                                  help="Without a key the app shows pre-generated demo emails and briefs.")
+        model = st.text_input("Model", value=os.getenv("GEMINI_MODEL", em.DEFAULT_MODEL))
     api_key = typed_key or env_key
-    model = st.text_input("Gemini model", value=os.getenv("GEMINI_MODEL", em.DEFAULT_MODEL))
+    st.caption("Gemini: connected" if api_key else "Gemini: off, showing demo output")
 
 fun = a.funnel(sessions)
 lead_df = a.leads(sessions)
@@ -110,7 +112,7 @@ with tab_f:
             marker={"color": [ACCENT if s in (5, 7) else GREY for s in fun["stage"]]}))
         fig.update_layout(height=430, margin=dict(l=10, r=10, t=30, b=10),
                           title="Where paid clicks go (share of all clicks)")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
     with right:
         st.subheader("Biggest leaks")
         for r in a.biggest_leaks(fun).itertuples():
@@ -137,15 +139,18 @@ with tab_f:
     bar.add_vline(x=avg, line_dash="dash", annotation_text="average")
     bar.update_layout(height=60 + 40 * len(t), xaxis_tickformat=".0%", legend_title="", yaxis_title="",
                       xaxis_title="pass rate", margin=dict(l=10, r=10, t=10, b=10))
-    st.plotly_chart(bar, use_container_width=True)
+    st.plotly_chart(bar, width="stretch")
 
     an = a.anomalies(sessions, from_stage, to_stage, dims)
     if an.empty:
         st.success("No group differs significantly from the average on this step.")
     else:
-        st.markdown("**Groups that differ significantly (|z| ≥ 2), all dimensions:**")
-        st.dataframe(an.assign(rate=an["rate"].map("{:.1%}".format), vs_avg_pp=an["vs_avg_pp"].round(1),
-                               z=an["z"].round(1)), hide_index=True, use_container_width=True)
+        top = an.iloc[0]
+        st.info(f"{len(an)} group(s) differ significantly on this step. Biggest: **{top['dimension']} = "
+                f"{top['label']}**, {top['rate']:.1%} pass vs {avg:.1%} average.")
+        with st.expander("All groups that differ significantly (|z| ≥ 2)"):
+            st.dataframe(an.assign(rate=an["rate"].map("{:.1%}".format), vs_avg_pp=an["vs_avg_pp"].round(1),
+                                   z=an["z"].round(1)), hide_index=True, width="stretch")
 
 # ---------- pains ----------
 with tab_p:
@@ -160,18 +165,21 @@ with tab_p:
                 color_discrete_map={"Share of quiz answers": GREY, "Share of buyers": ACCENT})
     pf.update_layout(height=380, xaxis_tickformat=".0%", yaxis_title="", xaxis_title="", legend_title="",
                      margin=dict(l=10, r=10, t=10, b=10))
-    st.plotly_chart(pf, use_container_width=True)
+    st.plotly_chart(pf, width="stretch")
     st.markdown("**Findings for the creative team**")
     for line in a.pain_insights(pains):
         st.markdown(f"- {line}")
-    st.dataframe(pains.drop(columns="pain").style.format({
-        "share_of_answers": "{:.1%}", "email_pass_rate": "{:.1%}", "offer_to_paid": "{:.2%}",
-        "share_of_buyers": "{:.1%}", "conversion_index": "{:.2f}"}), hide_index=True, use_container_width=True)
-    st.caption("Conversion index = share of buyers ÷ share of answers. Above 1 = the pain converts better than average.")
+    with st.expander("Numbers by pain"):
+        st.dataframe(pains.drop(columns="pain").style.format({
+            "share_of_answers": "{:.1%}", "email_pass_rate": "{:.1%}", "offer_to_paid": "{:.2%}",
+            "share_of_buyers": "{:.1%}", "conversion_index": "{:.2f}"}), hide_index=True, width="stretch")
+        st.caption("Conversion index = share of buyers ÷ share of answers. Above 1 = the pain converts better "
+                   "than average.")
 
+    st.divider()
     st.subheader("Creative briefs from pains")
-    st.caption("Second lever for ROMI: recovery raises revenue per click, ads built on pains that convert "
-               "lower CPA. Gemini turns the table above into hooks and 15-second scripts for motion designers.")
+    st.caption("Ads built on pains that convert lower CPA. Gemini turns the findings into hooks and "
+               "15-second scripts.")
     if "creative" not in st.session_state:
         st.session_state.creative = None
     if st.button("Write briefs with Gemini", type="primary", disabled=not api_key, key="gen_creative"):
@@ -195,7 +203,7 @@ with tab_p:
                     st.markdown("**Hooks (first 2 seconds)**\n" + "\n".join(f"- {h}" for h in b["hooks"]))
                 if b["script"]:
                     st.markdown("**15-second script**")
-                    st.dataframe(pd.DataFrame(b["script"]), hide_index=True, use_container_width=True)
+                    st.dataframe(pd.DataFrame(b["script"]), hide_index=True, width="stretch")
                 if b["on_screen_text"]:
                     st.caption(f"End card: {b['on_screen_text']}")
         st.download_button("Briefs (Markdown)", cr.to_markdown(pack, labels), "creative_briefs.md", "text/markdown")
@@ -205,13 +213,14 @@ with tab_p:
 # ---------- opportunity ----------
 with tab_o:
     st.subheader("What the leads are worth per month")
-    st.caption(f"Lead rate from this export: {lead_share:.1%} of clicks gave an email and did not pay.")
-    i1, i2, i3, i4 = st.columns(4)
-    spend = i1.number_input("Monthly ad spend, $", 100_000, 2_000_000, 400_000, 50_000)
-    cpc = i2.number_input("CPC, $", 0.2, 5.0, 1.0, 0.05)
-    ltv = i3.number_input("LTV of a recovered buyer, $", 10, 200, 60, 1,
-                          help="$68 data-room LTV minus an allowance for a first-box discount")
-    case = i4.radio("Today", ["A: no recovery emails", "B: generic flow exists"])
+    with st.expander("Assumptions"):
+        st.caption(f"Lead rate from this export: {lead_share:.1%} of clicks gave an email and did not pay.")
+        i1, i2, i3, i4 = st.columns(4)
+        spend = i1.number_input("Monthly ad spend, $", 100_000, 2_000_000, 400_000, 50_000)
+        cpc = i2.number_input("CPC, $", 0.2, 5.0, 1.0, 0.05)
+        ltv = i3.number_input("LTV of a recovered buyer, $", 10, 200, 60, 1,
+                              help="$68 data-room LTV minus an allowance for a first-box discount")
+        case = i4.radio("Today", ["A: no recovery emails", "B: generic flow exists"])
     if case.startswith("A"):
         levels, cost = {"Pessimistic": 0.003, "Base": 0.01, "Optimistic": 0.02}, 3_000
         conv_help = "Incremental orders per lead, vs a holdout"
@@ -233,17 +242,19 @@ with tab_o:
             rows.append({"Scenario": name, "Conversion": f"{c:.2%}", "Spend": money(sp),
                          "Orders / month": round(r["orders"]), "EGP / month": money(r["egp"]),
                          "ROMI lift": f"+{r['romi_lift_pp']:.1f} pp"})
-    st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
-    st.caption("EGP = recovered orders × LTV − email platform cost; no extra ad spend. "
-               "Model of the full $400k → $800k ramp with CPA degradation: model/egp_model.py.")
+    st.caption("EGP = recovered orders × LTV − email platform cost; no extra ad spend.")
+    with st.expander("Scenarios at $400k and $800k"):
+        st.dataframe(pd.DataFrame(rows), hide_index=True, width="stretch")
+        st.caption("Full $400k → $800k ramp with CPA degradation: model/egp_model.py.")
 
     st.subheader("Segments to recover")
     sv = segs.copy()
     sv["monthly_leads"] = sv["share"] * o["leads"]
     sv["egp_month"] = sv["monthly_leads"] * conv * ltv
-    st.dataframe(sv[["label", "leads", "share", "monthly_leads", "egp_month", "top_who_for", "top_size"]].style.format(
-        {"share": "{:.1%}", "monthly_leads": "{:,.0f}", "egp_month": "${:,.0f}"}),
-        hide_index=True, use_container_width=True)
+    st.dataframe(sv[["label", "monthly_leads", "egp_month"]].rename(columns={
+        "label": "Segment (pain / where they stopped)", "monthly_leads": "Leads / month", "egp_month": "EGP / month"})
+        .style.format({"Leads / month": "{:,.0f}", "EGP / month": "${:,.0f}"}),
+        hide_index=True, width="stretch")
 
 # ---------- emails ----------
 with tab_e:
@@ -293,56 +304,61 @@ with tab_e:
                        "support, discounts, spam triggers. Errors trigger one automatic rewrite on generation.")
         for i in rep["sequence"]:
             st.error(f"{i['field']}: {i['msg']}")
-        cols = st.columns(len(seq["emails"]))
-        for col, e, issues in zip(cols, seq["emails"], rep["per_email"]):
-            with col:
-                st.markdown(f"**+{e['send_after_hours']}h** · A: {e['subject']}")
-                for letter, alt in zip("BC", e.get("alt_subjects") or []):
-                    st.markdown(f"<small>{letter}: {alt}</small>", unsafe_allow_html=True)
-                st.caption(e["preheader"])
-                if issues:
+        mark = lambda issues: "" if not issues else (" ⛔" if any(i["level"] == "error" for i in issues) else " ⚠️")
+        etabs = st.tabs([f"Email {n} · +{e['send_after_hours']}h{mark(iss)}"
+                         for n, (e, iss) in enumerate(zip(seq["emails"], rep["per_email"]), 1)])
+        for et, e, issues in zip(etabs, seq["emails"], rep["per_email"]):
+            with et:
+                left, right = st.columns([2, 3])
+                with left:
+                    st.markdown("**Subject lines (A/B/C test)**")
+                    for letter, subj in zip("ABC", [e["subject"], *(e.get("alt_subjects") or [])]):
+                        st.markdown(f"{letter}. {subj}")
+                    st.caption(f"Preheader: {e['preheader']}")
                     for i in issues:
                         (st.error if i["level"] == "error" else st.warning)(f"{i['field']}: {i['msg']}", icon=None)
-                else:
-                    st.success("All checks passed")
-                components.html(em.render_html(e, {"size": str(seg_by_id[pick].get("top_size") or "M"),
-                                                   "who_for": "you"}), height=520, scrolling=True)
+                    if not issues:
+                        st.success("All checks passed")
+                with right:
+                    components.html(em.render_html(e, {"size": str(seg_by_id[pick].get("top_size") or "M"),
+                                                       "who_for": "you"}), height=460, scrolling=True)
         with st.expander("Prompt sent to Gemini"):
             st.code(em.build_prompt(seg_by_id[pick], discount), language="text")
 
-    st.subheader("Export for the email platform")
     all_seqs = [gen.get(s) or demo.get(s) for s in seg_ids]
     all_seqs = [s for s in all_seqs if s]
-    d1, d2, d3 = st.columns(3)
-    d1.download_button("Lead profiles (CSV)", em.profiles_export(lead_df).to_csv(index=False),
-                       "recovery_profiles.csv", "text/csv",
-                       help="Email + segment properties, one row per lead, for a profile import")
-    d2.download_button("Email sequences (CSV)", em.sequences_to_csv(all_seqs).to_csv(index=False),
-                       "recovery_sequences.csv", "text/csv", disabled=not all_seqs)
-    d3.download_button("Sequences (JSON)", json.dumps(all_seqs, indent=2, ensure_ascii=False),
-                       "recovery_sequences.json", "application/json", disabled=not all_seqs)
-    st.caption(f"{len(all_seqs)} of {len(seg_ids)} segments have a sequence. "
-               "Flows branch on the segment_id profile property. Subjects A/B/C go into the platform's "
-               "subject-line A/B test; it sends the winner after the test window.")
+    with st.expander(f"Export for the email platform ({len(all_seqs)} of {len(seg_ids)} segments ready)"):
+        d1, d2, d3 = st.columns(3)
+        d1.download_button("Lead profiles (CSV)", em.profiles_export(lead_df).to_csv(index=False),
+                           "recovery_profiles.csv", "text/csv",
+                           help="Email + segment properties, one row per lead, for a profile import")
+        d2.download_button("Email sequences (CSV)", em.sequences_to_csv(all_seqs).to_csv(index=False),
+                           "recovery_sequences.csv", "text/csv", disabled=not all_seqs)
+        d3.download_button("Sequences (JSON)", json.dumps(all_seqs, indent=2, ensure_ascii=False),
+                           "recovery_sequences.json", "application/json", disabled=not all_seqs)
+        st.caption("Flows branch on the segment_id profile property. Subjects A/B/C go into the platform's "
+                   "subject-line A/B test; it sends the winner after the test window.")
 
 # ---------- experiment ----------
 with tab_x:
     st.subheader("Did the emails make money? Holdout test readout")
     st.caption("Leads are split 50/50: treatment gets the sequences, holdout gets nothing. "
                "Incremental orders per lead = treatment rate − holdout rate. Only this number goes into EGP.")
-    xs = st.radio("Test results", ["Sample 3-week test (synthetic)", "Upload CSV", "Simulate"], horizontal=True)
-    if xs == "Upload CSV":
-        upx = st.file_uploader("Results: email, segment_id, group, ordered (+ opened, clicked, unsubscribed, spam)",
-                               type=["csv", "gz"], key="upx")
-        results = pd.read_csv(upx, compression="gzip" if upx and upx.name.endswith(".gz") else None) if upx else None
-    elif xs == "Simulate":
-        s1, s2 = st.columns(2)
-        n_test = s1.slider("Leads in test", 10_000, 200_000, 100_000, 10_000,
-                           help="100k ≈ 3 weeks of leads at $400k/month")
-        scale = s2.slider("True effect (1.0 = planted lifts, 0 = emails do nothing)", 0.0, 1.5, 0.7, 0.1)
-        results = ex.simulate_results(segs, n_test, scale, seed=3)
-    else:
-        results = pd.read_csv(SAMPLE_TEST)
+    with st.expander("Test data and assumptions"):
+        xs = st.radio("Test results", ["Sample 3-week test (synthetic)", "Upload CSV", "Simulate"], horizontal=True)
+        if xs == "Upload CSV":
+            upx = st.file_uploader("Results: email, segment_id, group, ordered (+ opened, clicked, unsubscribed, spam)",
+                                   type=["csv", "gz"], key="upx")
+            results = pd.read_csv(upx, compression="gzip" if upx and upx.name.endswith(".gz") else None) if upx else None
+        elif xs == "Simulate":
+            s1, s2 = st.columns(2)
+            n_test = s1.slider("Leads in test", 10_000, 200_000, 100_000, 10_000,
+                               help="100k ≈ 3 weeks of leads at $400k/month")
+            scale = s2.slider("True effect (1.0 = planted lifts, 0 = emails do nothing)", 0.0, 1.5, 0.7, 0.1)
+            results = ex.simulate_results(segs, n_test, scale, seed=3)
+        else:
+            results = pd.read_csv(SAMPLE_TEST)
+        ltv_x = st.number_input("LTV of a recovered buyer, $", 10, 200, 60, 1, key="ltv_x")
     if results is None:
         st.info("Upload a results file, or use the sample.")
     else:
@@ -352,7 +368,6 @@ with tab_x:
             st.error(str(e))
             st.stop()
         tot = ro[ro["segment_id"] == "TOTAL"].iloc[0]
-        ltv_x = st.number_input("LTV of a recovered buyer, $", 10, 200, 60, 1, key="ltv_x")
         val = ex.value_of_lift(tot["lift"], ltv_x).set_index("spend")
         k1, k2, k3, k4 = st.columns(4)
         k1.metric("Incremental orders per lead", f"{tot['lift']:.2%}",
@@ -380,25 +395,35 @@ with tab_x:
         fig.update_layout(height=60 + 40 * len(body), xaxis_tickformat=".1%", xaxis_title="incremental orders per lead",
                           yaxis=dict(categoryorder="array", categoryarray=body["label"][::-1].tolist()),
                           margin=dict(l=10, r=10, t=10, b=10), legend_title="")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
         st.caption("Bars = 95% interval, Bonferroni-corrected across segments so a lucky segment is not rolled out "
                    "by chance. Roll out: interval above 0 and lift ≥ 0.15%. Stop: whole interval below 0.15%.")
-        show = ro[["label", "treatment_leads", "holdout_leads", "treatment_rate", "holdout_rate", "lift",
-                   "ci_low", "ci_high", "p_value", "verdict", "leads_needed"]]
-        st.dataframe(show.style.format({"treatment_rate": "{:.2%}", "holdout_rate": "{:.2%}", "lift": "{:+.2%}",
-                                        "ci_low": "{:+.2%}", "ci_high": "{:+.2%}", "p_value": "{:.3g}",
-                                        "treatment_leads": "{:,}", "holdout_leads": "{:,}", "leads_needed": "{:,}"}),
-                     hide_index=True, use_container_width=True)
-        st.caption("leads_needed = leads per group to detect the observed lift (or 0.3%, whichever is larger) "
-                   "with 80% power.")
 
         fh = ex.flow_health(results)
         if not fh.empty:
-            st.markdown("**Flow health (treatment)**")
-            hc = st.columns(len(fh))
-            for c, r in zip(hc, fh.itertuples()):
-                c.metric(r.metric, f"{r.rate:.2%}", f"target {r.target}", delta_color="normal" if r.ok else "inverse")
-        st.download_button("Readout (CSV)", ro.to_csv(index=False), "experiment_readout.csv", "text/csv")
+            bad = fh[~fh["ok"]]
+            if bad.empty:
+                st.success("Flow health OK: open, click, unsubscribe and spam rates are within target.")
+            else:
+                st.warning("Flow health off target: " + ", ".join(
+                    f"{r.metric} {r.rate:.2%} (target {r.target})" for r in bad.itertuples()))
+
+        with st.expander("Segment table and flow health"):
+            show = ro[["label", "treatment_leads", "holdout_leads", "treatment_rate", "holdout_rate", "lift",
+                       "ci_low", "ci_high", "p_value", "verdict", "leads_needed"]]
+            st.dataframe(show.style.format({"treatment_rate": "{:.2%}", "holdout_rate": "{:.2%}", "lift": "{:+.2%}",
+                                            "ci_low": "{:+.2%}", "ci_high": "{:+.2%}", "p_value": "{:.3g}",
+                                            "treatment_leads": "{:,}", "holdout_leads": "{:,}",
+                                            "leads_needed": "{:,}"}),
+                         hide_index=True, width="stretch")
+            st.caption("leads_needed = leads per group to detect the observed lift (or 0.3%, whichever is larger) "
+                       "with 80% power.")
+            if not fh.empty:
+                hc = st.columns(len(fh))
+                for c, r in zip(hc, fh.itertuples()):
+                    c.metric(r.metric, f"{r.rate:.2%}", f"target {r.target}",
+                             delta_color="normal" if r.ok else "inverse")
+            st.download_button("Readout (CSV)", ro.to_csv(index=False), "experiment_readout.csv", "text/csv")
 
 # ---------- data ----------
 with tab_d:
@@ -407,7 +432,7 @@ with tab_d:
                 "Events: `ad_click`, `step_view` (1-5), `step_answer`, `email_submitted`, `offer_view`, `purchase`.")
     st.markdown("The bundled sample is **synthetic**, calibrated to the data-room funnel "
                 "(88% → 61% → 58% → 36% → 31% → 2%).")
-    st.dataframe(sessions.head(200), use_container_width=True)
+    st.dataframe(sessions.head(200), width="stretch")
     if raw_events is not None:
         st.download_button("Download generated events (CSV)", raw_events.to_csv(index=False),
                            "quiz_events.csv", "text/csv")

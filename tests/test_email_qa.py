@@ -30,6 +30,13 @@ def test_limits_and_discount():
     assert any(i["field"] == "claim" for i in q.check_email(_email(body=f"20% off. {BODY}"), True, 0))
 
 
+def test_absolute_promises_flagged_but_pain_quotes_pass():
+    issues = q.check_email(_email(alt_subjects=["Never lose a sock again", "Pairs together forever"]))
+    assert sum("absolute promise" in i["msg"] for i in issues) == 1  # one hit per rule, both subjects joined
+    ok = f"You said you can never find a match and sorting takes forever. {BODY}"
+    assert q.check_email(_email(body=ok)) == []
+
+
 def test_skip_in_plain_english_is_fine():
     assert q.check_email(_email(body=f"You can skip this email. {BODY}")) == []
 

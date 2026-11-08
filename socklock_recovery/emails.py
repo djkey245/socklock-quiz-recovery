@@ -41,6 +41,8 @@ Rules:
 - Only the product features and terms listed above exist. "Cancel anytime" is the only flexibility
   (no pausing, skipping or free trial). Do not claim comfort, fit, materials or durability.
 - Do not claim we saved or reserved anything for them.
+- No absolute promises ("never lose a sock again", "no more searching", "together forever", "always"):
+  the magnet works in the washer and dryer only, and only if the pair is snapped together.
 - If the pain is something the magnet does not solve (for example socks wearing out), do not pretend it does;
   be honest about what SockLock fixes.
 - No emoji in subjects.

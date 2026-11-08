@@ -16,6 +16,9 @@ BANNED = {
     r"\bguarantee": "guarantee",
     r"\breviews?\b|\brated\b|\b\d(\.\d)? stars?\b|\bcustomers? (love|say)|\bthousands of\b": "social proof we do not have",
     r"\bsaved\b.*\bfor you\b|\breserved\b|\bheld for you\b|\bwaiting for you\b": "claims we saved something for them",
+    r"\bnever (again|lose|lost|search|match|sort|waste|vanish|disappear|go missing|get (separated|lost))"
+    r"|\b(together|pairs?) forever\b|\bno more (search|sort|missing|lost|odd|single)|\balways (pull|have|get|find)\b"
+    r"|\bcompletely\b": "absolute promise (the magnet works in the washer and dryer only)",
     r"\bcomfort|\bsoft(est|er)?\b|\bdurab|\blasts? longer\b|\bholds? up\b|\bwears? well\b|\bbreathab|\bcotton\b|\bmerino\b": "comfort / material / durability claim",
 }
 DISCOUNT = r"\d+\s?% off|\bdiscount|\bcoupon|\bpromo code|\bsale\b"
